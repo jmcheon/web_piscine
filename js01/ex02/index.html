@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount calculator</title>
+    <script src="calc.js" defer></script>
+</head>
+<body>
+    <h1>Discount calculator</h1>
+    <div id='inputForm'>
+        상품명:<input id='product' type="text"><br>
+        금액:<input id='price' type="number"><br>
+        멥버쉽 회원입니까?
+        <input id='checkbox' type="checkbox"><br>
+        멤버쉽 등급:
+        <select name="" id="select" disabled>
+            <option value="none">--선택--</option>
+            <option value="Lv1" data-percent='0.05'>Lv1</option>
+            <option value="Lv2" data-percent="0.10">Lv2</option>
+            <option value="Lv3" data-percent="0.15">Lv3</option>
+        </select>
+    </div>
+    <hr>
+    <div id='displayForm'>
+        <time id='time' datetime=""></time>
+        <ul id='display'>
+            <li id='displayName'>상품명:</li>
+            <li id='displayPrice'>원가:</li>
+            <li id='displayDiscount'>할인가:</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
