@@ -4,39 +4,36 @@ function randomFail() {
 	return true;
 }
 
-const FAIL_MESSAGE = "fail..!";
+const FAIL_MESSAGE = "fail..!, retrying... current step is...";
+const PROCESS = [['make dough', 5], 
+                    ['first fermentation', 4.2], 
+                    ['make shape', 3], 
+					['second fermentation', 2], 
+                    ['fry', 5]];
+let i = 0;
 
-const makeFood = (step, interval) => {
+function retry(currentProcess, promise) {
+    return new Promise((resolve, reject) => {
+        promise(currentProcess[i])
+            .then((result) => {
+                console.log(result[0], result[1] + 's...');
+                i++;
+                if (i < currentProcess.length)
+                    retry(currentProcess, promise).then(resolve).catch(reject);
+                resolve([currentProcess, result[0]])})
+            .catch((error) => {console.log(FAIL_MESSAGE, error[0]); retry(currentProcess, promise).then(resolve).catch(reject);});
+    });
+}
+
+const makeFood = ([step, interval]) => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
-			if (randomFail() === false) {
-				reject(new Error(FAIL_MESSAGE));
+			if (randomFail() === true) {
+			    resolve([step, interval]);
 			}
-			resolve(`${step} ${interval}s...`);
+            reject([step, interval]);
 		}, interval * 1000);
 	})
 }
 
-makeFood('make dough', 5)
-	.then((resolve) => {
-		console.log(resolve);
-		return makeFood('first fermentation', 4.2)
-	})
-	.then((resolve) => {
-		console.log(resolve);
-		return makeFood('make shape', 3)
-	})
-	.then((resolve) => {
-		console.log(resolve);
-		return makeFood('second fermentation', 2)
-	})
-	.then((resolve) => {
-		console.log(resolve);
-		return makeFood('fry', 5)
-	})
-	.then((resolve) => {
-		console.log(resolve);
-		console.log('done');
-	})
-	.catch(console.log);
-
+retry(PROCESS, makeFood);

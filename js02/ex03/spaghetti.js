@@ -4,7 +4,7 @@ const A_PROCESS = [['A. noodles', 10]];
 const B_PROCESS = [['B1. broccoli', 1], 
                     ['B2. garlic and onion', 2], 
                     ['B3. bacon and ham', 2], 
-                    ['sauce and vegetables', 3]];
+                    ['B4. sauce and vegetables', 3]];
 const C_PROCESS = [['C. mix everything', 3]];
 let i = 0;
 
