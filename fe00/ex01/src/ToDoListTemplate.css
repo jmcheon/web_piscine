@@ -1,0 +1,15 @@
+.firstSection {
+    font-size : 100px; 
+    border: 1px solid;
+}
+
+.secondSection {
+    font-size : 30px; 
+    text-align: left;
+    padding: 100px;
+}
+
+.thirdSection {
+    font-size : 30px; 
+    text-align: left;
+}
