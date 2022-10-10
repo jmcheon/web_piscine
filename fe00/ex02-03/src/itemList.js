@@ -6,6 +6,8 @@ function ItemList(props) {
     const removeItem = (id) => {
         const newList = props.list.filter((currentItem) => currentItem.id !== id);
         props.setlist(newList);
+        if (newList.length === 0)
+            props.setNextId(0);
     };
 
     const input_list = props.list.map((currentItem) => (
