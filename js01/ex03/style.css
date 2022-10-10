@@ -40,3 +40,7 @@ li {
     background: cornflowerblue;
 	border-radius: 1rem;
 }
+
+li:hover {
+    color : red;
+}
