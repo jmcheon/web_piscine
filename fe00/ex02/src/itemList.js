@@ -10,6 +10,7 @@ function ItemList(props) {
 
     const input_list = props.list.map((currentItem) => (
         <Item
+            key={currentItem.id}
             id={currentItem.id}
             item={currentItem.text}
             removeItem={removeItem}
