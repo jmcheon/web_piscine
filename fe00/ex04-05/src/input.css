@@ -1,0 +1,20 @@
+.input-container {
+    /* display: flex; */
+    background-color: white;
+}
+
+.input-box {
+    display: flex;
+    width: 100%;
+}
+
+input {
+    flex-grow: 1;
+    width: 90%;
+    margin-right: 2%;
+    height: 30px;
+}
+
+button {
+    height: 40px;
+}
