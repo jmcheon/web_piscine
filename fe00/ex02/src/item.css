@@ -1,0 +1,25 @@
+.item-container {
+    display: flex;
+}
+
+.delete-botton {
+    display: none;
+    font-size: 15px;
+    padding-top: 2.5em;
+}
+
+.item-container:hover {
+    background-color: rgb(197, 197, 197);
+}
+
+.item-container:hover>.delete-botton {
+    display: inline;
+}
+
+
+.item-text {
+    display: inline-block;
+    padding-left: 2%;
+    width: 90%;
+}
+
