@@ -1,5 +1,5 @@
 module.exports = {
-    html : (title, list, body, control) => {
+    html : (title, list, body, control, authStatusUI = '<a href="/auth/login">login</a>') => {
         return (`<!doctype html>
         <html>
             <head>
@@ -7,6 +7,7 @@ module.exports = {
                 <meta charset="utf-8">
             </head>
             <body>
+                ${authStatusUI}
                 <h1><a href="/">Express server</a></h1>
                 ${list}
                 ${control}
