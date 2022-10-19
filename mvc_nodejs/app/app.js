@@ -16,6 +16,7 @@ const home = require("./src/routes/home");
 
 // routes
 app.use("/", home);
+app.use(express.static(`${__dirname}/src/public`));
 
 // app setting
 app.set("views", "./src/views");
