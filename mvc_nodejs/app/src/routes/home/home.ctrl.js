@@ -12,7 +12,7 @@ const output = {
 
 const users = {
   id: ["jung", "moo", "cheon"],
-  password: [1, 2, 3],
+  password: ["1", "2", "3"],
 };
 
 const process = {
@@ -23,7 +23,7 @@ const process = {
 
     if (users.id.includes(id)) {
       const index = users.id.indexOf(id);
-      if (users.password[id] === password) {
+      if (users.password[index] === password) {
         return response.json({
           success: true,
         });

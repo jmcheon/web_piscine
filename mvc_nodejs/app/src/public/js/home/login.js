@@ -1,3 +1,5 @@
+// const { response } = require("express");
+
 const id = document.querySelector("#id");
 const password = document.querySelector("#password");
 const button = document.querySelector("button");
@@ -19,5 +21,14 @@ function login() {
     body: JSON.stringify(request),
   })
     .then((response) => response.json())
-    .then(console.log);
+    .then((response) => {
+      if (response.success) {
+        location.href = "/";
+      } else {
+        alert(response.message);
+      }
+    })
+    .catch((error) => {
+      console.error("login error");
+    });
 }
