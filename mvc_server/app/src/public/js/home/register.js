@@ -7,11 +7,16 @@ const button = document.querySelector("#button");
 button.addEventListener("click", register);
 
 function register() {
+  if (!id.value) {
+    return alert("please enter id");
+  }
+  if (password.value !== confirmPassword.value) {
+    return alert("password doesn't match");
+  }
   const request = {
     id: id.value,
     name: name.value,
     password: password.value,
-    confirmPassword: confirmPassword.value,
   };
   // console.log(request);
   // console.log(JSON.stringify(request));

@@ -21,6 +21,11 @@ const process = {
     const res = user.login();
     return response.json(res);
   },
+  register: (request, response) => {
+    const user = new User(request.body);
+    const res = user.register();
+    return response.json(res);
+  },
 };
 
 module.exports = {
