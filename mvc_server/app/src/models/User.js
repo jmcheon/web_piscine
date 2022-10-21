@@ -17,10 +17,14 @@ class User {
     }
     return { success: false, message: "login not exist" };
   }
-  register() {
-    const client = this.body;
-    const response = UserStorage.save(client);
-    return response;
+  async register() {
+    try {
+      const client = this.body;
+      const response = await UserStorage.save(client);
+      return response;
+    } catch (error) {
+      return { success: false, message: error };
+    }
   }
 }
 
