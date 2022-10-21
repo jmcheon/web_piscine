@@ -5,6 +5,12 @@ const button = document.querySelector("#button");
 button.addEventListener("click", login);
 
 function login() {
+  if (!id.value) {
+    return alert("please enter id");
+  }
+  if (!password.value) {
+    return alert("please enter password");
+  }
   const request = {
     id: id.value,
     password: password.value,
