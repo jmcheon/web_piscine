@@ -10,6 +10,9 @@ const output = {
   login: (request, response) => {
     response.render("home/login.ejs");
   },
+  register: (request, response) => {
+    response.render("home/register.ejs");
+  },
 };
 
 const process = {
