@@ -1,6 +1,7 @@
 const app = require("../app");
-const PORT = 3002;
+const logger = require("../src/config/logger");
+const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => {
-  console.log(`${PORT} server`);
+  logger.info(`${PORT} server`);
 });
