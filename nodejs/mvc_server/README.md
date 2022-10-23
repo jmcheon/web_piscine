@@ -1,4 +1,5 @@
 # mvc_server 
-login web page
+
+login + register 
 
 express + fetch() + mvc pattern
