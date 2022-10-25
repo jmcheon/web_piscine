@@ -17,6 +17,12 @@
       "email": "2@gmail.com",
       "password": "2",
       "displayName": "2"
+    },
+    {
+      "id": "-Ls4VKFjD",
+      "email": "newpass@gmail.com",
+      "password": "$2b$10$uMPlIezKzdWlTNVbIVBlaemZpPbYzeRrZUmmuwG.p4GmFG5VmXAIm",
+      "displayName": "newpass"
     }
   ],
   "topics": [

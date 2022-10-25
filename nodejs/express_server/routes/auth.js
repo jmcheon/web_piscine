@@ -3,6 +3,7 @@ const router = express.Router();
 const template = require("../lib/template.js");
 const shortid = require("shortid");
 const db = require("../lib/db");
+const bcrypt = require("bcrypt");
 
 module.exports = function (passport) {
   router.get("/login", (request, response) => {
@@ -88,15 +89,17 @@ module.exports = function (passport) {
       request.flash("error", "passwrod not same");
       response.redirect("/auth/register");
     } else {
-      const user = {
-        id: shortid.generate(),
-        email: email,
-        password: password,
-        displayName: displayName,
-      };
-      db.get("users").push(user).write();
-      request.login(user, function (err) {
-        return response.redirect("/");
+      bcrypt.hash(password, 10, function (error, hash) {
+        const user = {
+          id: shortid.generate(),
+          email: email,
+          password: hash,
+          displayName: displayName,
+        };
+        db.get("users").push(user).write();
+        request.login(user, function (err) {
+          return response.redirect("/");
+        });
       });
     }
   });
