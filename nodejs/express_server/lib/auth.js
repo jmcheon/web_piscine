@@ -6,9 +6,10 @@ module.exports = {
     return false;
   },
   statusUI: function (request, response) {
-    let authStatusUI = '<a href="/auth/login">login</a>';
+    let authStatusUI =
+      '<a href="/auth/login">login</a> | <a href="/auth/register">register</a>';
     if (this.isOwner(request, response)) {
-      authStatusUI = `${request.user.nickname} | <a href="/auth/logout">logout</a>`;
+      authStatusUI = `${request.user.displayName} | <a href="/auth/logout">logout</a>`;
     }
     return authStatusUI;
   },

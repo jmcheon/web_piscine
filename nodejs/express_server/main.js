@@ -7,6 +7,7 @@ const compression = require("compression");
 const session = require("express-session");
 const FileStore = require("session-file-store")(session);
 const flash = require("connect-flash");
+const db = require("./lib/db");
 
 app.use(helmet());
 app.use(express.static("public"));
@@ -26,10 +27,11 @@ app.use(flash());
 let passport = require("./lib/passport")(app);
 
 app.get("*", (request, response, next) => {
-  fs.readdir("./data", (error, fileLIst) => {
-    request.list = fileLIst;
-    next();
-  });
+  //   fs.readdir("./data", (error, fileLIst) => {
+  // request.list = fileLIst;
+  request.list = db.get("topics").value();
+  next();
+  //   });
 });
 
 const topicRouter = require("./routes/topic");

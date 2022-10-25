@@ -1,5 +1,5 @@
 # express_server 
 
-CRUD + login(session) permission
+functionalities: CRUD + login + register + session
 
-express + session auth 
+implementation: express + passport-local + lowdb

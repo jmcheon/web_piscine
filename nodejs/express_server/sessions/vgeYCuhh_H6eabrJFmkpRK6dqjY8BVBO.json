@@ -1,1 +1,11 @@
-{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"passport":{},"__lastAccess":1666678386019,"flash":{}}
+{
+  "cookie": {
+    "originalMaxAge": null,
+    "expires": null,
+    "httpOnly": true,
+    "path": "/"
+  },
+  "passport": { "user": "hello@gmail.com" },
+  "__lastAccess": 1666678297684,
+  "flash": {}
+}

@@ -5,6 +5,7 @@
     "httpOnly": true,
     "path": "/"
   },
-  "passport": { "user": "hello@gmail.com" },
-  "__lastAccess": 1666678505407
+  "passport": {},
+  "__lastAccess": 1666720751501,
+  "flash": {}
 }
