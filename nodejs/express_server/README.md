@@ -1,5 +1,16 @@
 # express_server 
 
-functionalities: CRUD(access control by login id) + login + register + session + password hash(bcrypt)
+Functionalities:
 
-implementation: express + passport-local + lowdb
+	1. CRUD(access control by login id)
+
+	2. login by session
+
+	3. register + password hash(bcrypt)
+
+	4. google login by oauth
+
+
+Implementation:
+
+	express + passport-local + passport-google-oauth + lowdb
