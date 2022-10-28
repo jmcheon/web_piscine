@@ -23,6 +23,13 @@
       "email": "newpass@gmail.com",
       "password": "$2b$10$uMPlIezKzdWlTNVbIVBlaemZpPbYzeRrZUmmuwG.p4GmFG5VmXAIm",
       "displayName": "newpass"
+    },
+    {
+      "id": "eFWK3uYEd",
+      "email": "developer.cheon@gmail.com",
+      "displayName": "1234",
+      "googleId": "109356102191512026316",
+      "password": "$2b$10$1LIUYx5icb7ce4WPAW/m0.anwgC1/dEdYOKl4UZuFbKmQGwjJfBtO"
     }
   ],
   "topics": [

@@ -90,13 +90,19 @@ module.exports = function (passport) {
       response.redirect("/auth/register");
     } else {
       bcrypt.hash(password, 10, function (error, hash) {
-        const user = {
-          id: shortid.generate(),
-          email: email,
-          password: hash,
-          displayName: displayName,
-        };
-        db.get("users").push(user).write();
+        let user = db.get("users").find({ email: email }).value();
+        if (user) {
+          (user.password = hash), (user.displayName = displayName);
+          db.get("users").find({ id: user.id }).assign(user).write();
+        } else {
+          let user = {
+            id: shortid.generate(),
+            email: email,
+            password: hash,
+            displayName: displayName,
+          };
+          db.get("users").push(user).write();
+        }
         request.login(user, function (err) {
           return response.redirect("/");
         });
