@@ -15,7 +15,7 @@ Functionalities:
 
         3. admin login permission : get user list
 
-        4. no interface, access by postman
+        4. no user interface
 
 
 Implementation:
@@ -25,6 +25,12 @@ Implementation:
 
 API:
 
+        {
+                "username":"",
+                "password":""
+        }
+        
+        
         1. register: POST /api/auth/register
 
         2. login: POST /api/auth/login
