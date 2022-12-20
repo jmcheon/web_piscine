@@ -7,7 +7,7 @@ Set up:
 
         2. add needed information for mongodb(hash algo, mongodb uri)
 
-Functionalities:
+Features:
 
         1. login by jwt 
 
