@@ -1,6 +1,6 @@
 # express_server 
 
-Functionalities:
+Features:
 
 	1. CRUD(access control by login id)
 
